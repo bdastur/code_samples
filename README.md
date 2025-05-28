@@ -6,7 +6,7 @@ This repository contains a collection of cloud solutions, code samples, and proo
 
 | Solution Name | Description | AWS Services | Tags |
 |--------------|-------------|--------------|------|
-| cloudwatch-otel-transformer | Lambda function that transforms CloudWatch metrics from Kinesis Firehose and forwards them to OpenTelemetry endpoints | AWS Lambda, CloudWatch, Amazon Data Firehose | Observability, Metrics, Integration |
+| cloudwatch-streams-transform-lambda | Lambda function that transforms CloudWatch metrics from Kinesis Firehose and forwards them to OpenTelemetry endpoints | AWS Lambda, CloudWatch, Amazon Data Firehose | Observability, Metrics, Integration |
 
 
 ## Getting Started
