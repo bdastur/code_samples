@@ -7,6 +7,7 @@ This repository contains a collection of cloud solutions, code samples, and proo
 | Solution Name | Description | AWS Services | Tags |
 |--------------|-------------|--------------|------|
 | cloudwatch-streams-transform-lambda | Lambda function that transforms CloudWatch metrics from Kinesis Firehose and forwards them to OpenTelemetry endpoints | AWS Lambda, CloudWatch, Amazon Data Firehose | Observability, Metrics, Integration |
+| mcp_examples | Model Context Protocol (MCP) server implementations demonstrating calculator operations and client-server communication patterns | N/A | MCP, Protocol, Development |
 
 
 ## Getting Started
@@ -18,10 +19,16 @@ This repository contains a collection of cloud solutions, code samples, and proo
 
 ## Prerequisites
 
-- AWS Account
+### General Requirements
+- AWS Account (for AWS-based solutions)
 - Appropriate AWS IAM permissions
 - AWS CLI configured
-- Other solution-specific requirements will be listed in each solution's README
+
+### Solution-Specific Requirements
+- **CloudWatch Streams Transform Lambda**: Python 3.11+, SAM CLI, Docker
+- **MCP Examples**: Python 3.x, mcp library, click library
+
+Other solution-specific requirements will be listed in each solution's README
 
 
 ## Important Notice
