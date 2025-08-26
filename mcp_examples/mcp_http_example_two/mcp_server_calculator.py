@@ -42,13 +42,15 @@ async def math_operation(ctx: fastmcp.Context,
     """
     result = {}
     value = 0
-    
-    await ctx.info("[calculator-math_operation] started (%f , %f, %s)" % (a, b, operation))
+
+    await ctx.info("[calculator-math_operation] started (%f, %f, %s)" % (a, b, operation))
 
     if operation.lower() in ["add", "addition", "sum"]:
         return {"result":  a + b }
     elif operation.lower() in ["sub", "subtract"]:
         return {"result":  a - b }
+    elif operation.lower() in ["multiply", "multiplication"]:
+        return {"result": a * b}
     else:
         return {"result": "Operation %s Not supported by this tool" % operation}
     
