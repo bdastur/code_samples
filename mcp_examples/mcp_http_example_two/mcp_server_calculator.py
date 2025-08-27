@@ -27,7 +27,7 @@ mcp = fastmcp.FastMCP()
 @mcp.tool(title="add_two_numbers", 
           description="Tool to add two numbers")
 async def math_operation(ctx: fastmcp.Context,
-                   a: float = Field(description="An Float number"), 
+                   a: float = Field(description="A Float number"), 
                    b: float = Field(description="Second Float number"),
                    operation: str = Field(description="A mathematical operation. Can be add, subtract, multiply, divide")) -> (dict):
     """

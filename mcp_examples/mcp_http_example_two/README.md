@@ -90,6 +90,18 @@ def ServerEllicitationCallbackHandler(msg: str, requestParms: str):
    - "What is 5 plus 7?"
    - "Calculate 10 multiplied by 3"
    - "Subtract 15 from 30"
+   - "find the result of (4 * 5) * 4 - (9 * 7)"
+
+Example output for complex calculation:
+```
+Query: find the result of (4 * 5) * 4 - (9 * 7)
+Client: Msg from server:  [calculator-math_operation] started (4.000000, 5.000000, multiply)
+Client: Msg from server:  [calculator-math_operation] started (20.000000, 4.000000, multiply)
+Client: Msg from server:  [calculator-math_operation] started (9.000000, 7.000000, multiply)
+Client: Msg from server:  [calculator-math_operation] started (80.000000, 63.000000, subtract)
+
+The result of (4 * 5) * 4 - (9 * 7) I calculated is 17.
+```
 
 ## Implementation Details
 
