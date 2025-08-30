@@ -6,6 +6,7 @@ This repository contains a collection of cloud solutions, code samples, and proo
 
 | Solution Name | Description | AWS Services | Tags |
 |--------------|-------------|--------------|------|
+| cloudwatch-metric-usage-lambda | Lambda function that executes hourly to list all metrics and aggregate data to publish CloudWatch Total usage metrics for each account | AWS Lambda, CloudWatch, AWS SAM | Monitoring, Metrics, Cost Management |
 | cloudwatch-streams-transform-lambda | Lambda function that transforms CloudWatch metrics from Kinesis Firehose and forwards them to OpenTelemetry endpoints | AWS Lambda, CloudWatch, Amazon Data Firehose | Observability, Metrics, Integration |
 | mcp_examples | Model Context Protocol (MCP) server implementations demonstrating calculator operations and client-server communication patterns | N/A | MCP, Protocol, Development |
 
@@ -25,6 +26,7 @@ This repository contains a collection of cloud solutions, code samples, and proo
 - AWS CLI configured
 
 ### Solution-Specific Requirements
+- **CloudWatch Metric Usage Lambda**: Python 3.13+, SAM CLI, AWS CLI
 - **CloudWatch Streams Transform Lambda**: Python 3.11+, SAM CLI, Docker
 - **MCP Examples**: Python 3.x, mcp library, click library
 
