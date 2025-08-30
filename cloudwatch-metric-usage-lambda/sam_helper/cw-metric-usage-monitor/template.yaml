@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  cw-metric-usage-monitor
+  Sample SAM Template for cw-metric-usage-monitor
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 30
+
+Resources:
+  CloudWatchMetricMonitorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: code/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+        - x86_64
+      Policies:
+        - Statement:
+          - Effect: Allow
+            Action:
+              - ec2:CreateNetworkInterface
+              - ec2:DescribeNetworkInterfaces
+              - ec2:DeleteNetworkInterface
+              - cloudwatch:ListMetrics
+              - cloudwatch:PutMetricData
+            Resource: "*"
+
+      Events:
+        Every5MinutesCronSchedule:
+          Type: Schedule
+          Properties:
+            Schedule: cron(*/5 * * * ? *)
+            Description: "Trigger every 5 minutes using cron"
+            Enabled: true
+
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  CloudWatchMetricMonitorFunction:
+    Description: "CloudWatch Metric Monitor Function ARN"
+    Value: !GetAtt CloudWatchMetricMonitorFunction.Arn
+  CloudWatchMetricMonitorFunctionIamRole:
+    Description: "Implicit IAM Role created for Cloudwatch monitor function"
+    Value: !GetAtt CloudWatchMetricMonitorFunctionRole.Arn
