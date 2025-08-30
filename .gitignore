@@ -176,4 +176,5 @@ cython_debug/
 **/.aws-sam/
 **/layer/python
 
-
+**/terraform.*
+**/.terraform*
