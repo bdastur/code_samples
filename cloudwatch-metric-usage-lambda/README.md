@@ -13,15 +13,16 @@ This project uses AWS Serverless Application Model (SAM) to deploy a Lambda func
 
 This solution is particularly useful for monitoring organizations with multiple AWS accounts that send metrics to a central monitoring account, helping to track CloudWatch usage and potential costs.
 
-## Architecture
+## Sample Dashboard
 
-![Architecture Diagram](architecture_diagram_placeholder.png)
+![Sample Dashboard](dashboard.png)
 
 The solution consists of:
 
 - A Lambda function that executes on a schedule
 - IAM permissions to list metrics and publish new metrics
 - CloudWatch Events rule for scheduled execution
+- A terraform template that can generate a simple monitoring dashboard
 
 ## Prerequisites
 
