@@ -9,7 +9,7 @@ from code import app
 @pytest.fixture()
 def setupFireHoseEvent():
     fireHoseEvent = {
-        "deliveryStreamArn": "arn:aws:firehose:us-east-1:168442441230:deliverystream/MetricStreams-cwmetrics-stream-json-1-3cpNgpuC",
+        "deliveryStreamArn": "arn:aws:firehose:us-east-1:1xxxxxxxxxx:deliverystream/MetricStreams-cwmetrics-stream-json-1-3cpNgpuC",
         "region": "us-east-1",
         "records": []
     }
