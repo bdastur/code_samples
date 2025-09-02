@@ -11,22 +11,22 @@ def lambda_handler(event, context):
         if key == "TotalMetricCount":
             continue
 
-    # push metrics.
-    print("Key: ", key)
-    totalMetricCount = result["Summary"][key]["TotalMetricCount"]
-    dimensions = []
-    dimensions.append({"Name": "accountId", "Value": key})
+        # push metrics.
+        print("Key: ", key)
+        totalMetricCount = result["Summary"][key]["TotalMetricCount"]
+        dimensions = []
+        dimensions.append({"Name": "accountId", "Value": key})
 
-    print("Dimension: %s, totalmetriccount: %s" % (dimensions, totalMetricCount))
+        print("Dimension: %s, totalmetriccount: %s" % (dimensions, totalMetricCount))
 
-    ret = cwHelper.put_metric_data(
-            namespace="testnamespace",
-            metric_name="testmetric",
-            value=totalMetricCount,
-            unit="Count",
-            dimensions=dimensions)
+        ret = cwHelper.put_metric_data(
+                namespace="testnamespace",
+                metric_name="testmetric",
+                value=totalMetricCount,
+                unit="Count",
+                dimensions=dimensions)
 
-    print("Ret: ", ret)
+        print("Ret: ", ret)
 
     return {
         "statusCode": 200,
