@@ -57,4 +57,4 @@ Distributed under the Apache 2.0 License. See LICENSE for more information.
 
 ## Support
 
-For issues and questions, please open a GitHub issue in this repository.
+For issues and questions, please open a GitHub issue in this repository..
